@@ -1,18 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://df4ecv0jatbt5"]
+[gd_scene load_steps=5 format=3 uid="uid://df4ecv0jatbt5"]
 
 [ext_resource type="Script" path="res://demo/scripts/demo.gd" id="1_fwri2"]
-[ext_resource type="PackedScene" uid="uid://bmjacxspsp551" path="res://demo/scenes/player.tscn" id="2_o2yfo"]
 [ext_resource type="PackedScene" uid="uid://bkbxdj2oflyus" path="res://lib/scenes/portal.tscn" id="3_ty8vs"]
 
 [sub_resource type="Curve2D" id="Curve2D_3ucin"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 2, -17, 0, 0, 0, 0, -1, 159)
+"points": PackedVector2Array(0, 0, 0, 0, -137, -234, 0, 0, 0, 0, -137, -551)
 }
 point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_3y65h"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -37, -62, 0, 0, 0, 0, 70, 79)
+"points": PackedVector2Array(0, 0, 0, 0, 154, -182, 0, 0, 0, 0, 154, -350)
 }
 point_count = 2
 
@@ -21,10 +20,7 @@ script = ExtResource("1_fwri2")
 
 [node name="Line2D" type="Line2D" parent="."]
 self_modulate = Color(0.486786, 0.0195313, 1, 1)
-points = PackedVector2Array(13, 16, 27, 326, 13, 891, 1537, 873, 1579, 14, 1151, 52, 11, 17)
-
-[node name="Player" parent="." instance=ExtResource("2_o2yfo")]
-position = Vector2(434, 537)
+points = PackedVector2Array(13, 16, 27, 864, 1582, 884, 1585, 19, 11, 17)
 
 [node name="Portal" parent="." instance=ExtResource("3_ty8vs")]
 position = Vector2(676, 735)
@@ -34,7 +30,11 @@ curve = SubResource("Curve2D_3ucin")
 
 [node name="Portal2" parent="." instance=ExtResource("3_ty8vs")]
 position = Vector2(1123, 718)
+color = Color(0.95, 1, 0, 1)
 
 [node name="Path2D" type="Path2D" parent="Portal2"]
 position = Vector2(-1, 0)
 curve = SubResource("Curve2D_3y65h")
+
+[node name="Spawner" type="Node2D" parent="."]
+position = Vector2(161, 132)
