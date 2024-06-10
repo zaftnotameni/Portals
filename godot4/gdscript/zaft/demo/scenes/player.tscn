@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmjacxspsp551"]
+
+[ext_resource type="Script" path="res://demo/scripts/player.gd" id="1_6k6gf"]
+
+[sub_resource type="Gradient" id="Gradient_was22"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5sdca"]
+gradient = SubResource("Gradient_was22")
+fill_from = Vector2(1, 0)
+fill_to = Vector2(0, 1)
+repeat = 1
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_6k6gf")
+
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="Poly" type="Polygon2D" parent="Visuals"]
+unique_name_in_owner = true
+self_modulate = Color(0.765625, 0.305054, 0.747634, 1)
+texture = SubResource("GradientTexture2D_5sdca")
+polygon = PackedVector2Array(-16, -32, 16, -32, 16, 32, -16, 32)
